@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">MyAppointments</string>
+    <string name="dont_have_account">¿No tienes cuenta?</string>
+    <string name="create_here">, crea una aqui.</string>
+    <string name="register_name">Nombre Completo</string>
+    <string name="login_email">Email</string>
+    <string name="button_create_appointment">Siguiente</string>
+    <string name="button_my_appointments">Mis Citas</string>
+    <string name="button_log_out">Cerrar Sesión</string>
+    <string name="create_appointment_description">Descripción</string>
+    <string name="create_appointment_type">Tipo de Cita</string>
+    <string name="typeuno">Consulta</string>
+    <string name="typedos">Examen</string>
+    <string name="typetres">Operación</string>
+    <string name="create_appointment_date">Fecha para la cita</string>
+    <string name="date_format">%1$d-%2$s-%3$s</string>
+    <string name="item_appointment_id">Cita médica %1$d</string>
+    <string name="item_appointment_date">Atención el día %1$s</string>
+    <string name="item_appointment_time">A las %1$s</string>
+    <string name="myAppointmens">Mis Citas Registradas</string>
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bienvenido"
+            android:textAlignment="center"
+            android:layout_marginBottom="16dp"
+            android:textSize="@dimen/title_size"
+            android:textColor="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/btnCreateAppointment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:drawableStart="@drawable/ic_add_square"
+            android:paddingLeft="110dp"
+            android:paddingRight="130dp"
+            android:text="@string/button_create_appointment"
+            android:textColor="@color/colorPrimaryLight" />
+
+        <Button
+            android:id="@+id/btnMyAppointments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:drawableStart="@drawable/ic_format_list"
+            android:layout_marginVertical="@dimen/margin_buttons_vertical"
+            android:paddingLeft="110dp"
+            android:paddingRight="130dp"
+            android:text="@string/button_my_appointments"
+            android:textColor="@color/colorPrimaryLight" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:drawableStart="@drawable/ic_power_off"
+            android:paddingLeft="110dp"
+            android:paddingRight="130dp"
+            android:text="@string/button_log_out"
+            android:textColor="@color/colorPrimaryLight" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

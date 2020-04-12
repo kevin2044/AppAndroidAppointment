@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textsize_donthaveaccount">16sp</dimen>
+    <dimen name="edittext_textsize_login">20sp</dimen>
+    <dimen name="title_size">50sp</dimen>
+    <dimen name="margin_register">15dp</dimen>
+    <dimen name="margin_resgiter_button">15dp</dimen>
+    <dimen name="margin_buttons_vertical">40dp</dimen>
+    <dimen name="type_appointment">18sp</dimen>
+</resources>
