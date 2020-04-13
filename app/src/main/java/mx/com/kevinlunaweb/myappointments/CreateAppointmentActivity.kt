@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.RadioButton
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_create_appointment.*
 import java.util.*
 
@@ -20,8 +21,12 @@ class CreateAppointmentActivity : AppCompatActivity() {
         setContentView(R.layout.activity_create_appointment)
 
         btnNext.setOnClickListener {
-            cvStepOne.visibility = View.GONE
-            cvStepTwo.visibility = View.VISIBLE
+            if(etDescription.text.toString().length < 3){
+                etDescription.error = "La descripción es demasiado corta"
+            }else{
+                cvStepOne.visibility = View.GONE
+                cvStepTwo.visibility = View.VISIBLE
+            }
         }
 
         btnConfirmAppointment.setOnClickListener {
@@ -105,4 +110,24 @@ class CreateAppointmentActivity : AppCompatActivity() {
 
     private fun Int.twoDigits() = if (this>=10) this.toString() else "0$this"
 
+    override fun onBackPressed() {
+        if(cvStepTwo.visibility == View.VISIBLE){
+            cvStepTwo.visibility = View.GONE
+            cvStepOne.visibility = View.VISIBLE
+        }else if(cvStepOne.visibility == View.VISIBLE){
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("¿Estás seguro que deseas salir?")
+            builder.setMessage("Siabandonas el registro, los datos que habias ingresado se perderán.")
+            builder.setPositiveButton("Si, salir") { _, _ ->
+                finish()
+            }
+
+            builder.setNegativeButton("Continuar registro") { dialog, _ ->
+                dialog.dismiss()
+            }
+
+            val dialog = builder.create()
+            dialog.show()
+        }
+    }
 }

@@ -25,7 +25,6 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvStepOne"
-            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="8dp"
@@ -45,6 +44,7 @@
                     android:theme="@style/EditTextBlack">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDescription"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:passwordToggleEnabled="true"
@@ -82,6 +82,7 @@
                     android:layout_height="wrap_content">
                     <RadioButton
                         android:id="@+id/opcionuno"
+                        android:checked="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/typeuno" />
@@ -115,6 +116,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvStepTwo"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="8dp"
