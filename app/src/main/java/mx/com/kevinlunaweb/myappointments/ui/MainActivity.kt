@@ -1,4 +1,4 @@
-package mx.com.kevinlunaweb.myappointments
+package mx.com.kevinlunaweb.myappointments.ui
 
 import android.content.Context
 import android.content.Intent
@@ -7,11 +7,13 @@ import android.os.Bundle
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
+import mx.com.kevinlunaweb.myappointments.R
 
 class MainActivity : AppCompatActivity() {
 
     private val snackBar by lazy {
-        Snackbar.make(mainLayout, R.string.press_back_again, Snackbar.LENGTH_LONG)
+        Snackbar.make(mainLayout,
+            R.string.press_back_again, Snackbar.LENGTH_LONG)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,10 +1,11 @@
-package mx.com.kevinlunaweb.myappointments
+package mx.com.kevinlunaweb.myappointments.ui
 
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_menu.*
+import mx.com.kevinlunaweb.myappointments.R
 
 class MenuActivity : AppCompatActivity() {
 

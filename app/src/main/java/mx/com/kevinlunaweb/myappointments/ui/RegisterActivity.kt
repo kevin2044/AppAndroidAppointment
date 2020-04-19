@@ -1,7 +1,8 @@
-package mx.com.kevinlunaweb.myappointments
+package mx.com.kevinlunaweb.myappointments.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import mx.com.kevinlunaweb.myappointments.R
 
 class RegisterActivity : AppCompatActivity() {
 

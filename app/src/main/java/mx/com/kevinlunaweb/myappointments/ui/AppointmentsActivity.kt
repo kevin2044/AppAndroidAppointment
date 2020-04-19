@@ -1,9 +1,10 @@
-package mx.com.kevinlunaweb.myappointments
+package mx.com.kevinlunaweb.myappointments.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_appointments.*
+import mx.com.kevinlunaweb.myappointments.R
 import mx.com.kevinlunaweb.myappointments.model.Appointment
 import java.util.ArrayList
 
@@ -25,6 +26,7 @@ class AppointmentsActivity : AppCompatActivity() {
         )
 
         rvAppointments.layoutManager = LinearLayoutManager(this) //GridLayoutManager
-        rvAppointments.adapter = AppointmentAdapter(appointments)
+        rvAppointments.adapter =
+            AppointmentAdapter(appointments)
     }
 }

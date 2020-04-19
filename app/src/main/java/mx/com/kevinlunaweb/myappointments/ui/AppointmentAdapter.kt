@@ -1,10 +1,11 @@
-package mx.com.kevinlunaweb.myappointments
+package mx.com.kevinlunaweb.myappointments.ui
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_appointment.view.*
+import mx.com.kevinlunaweb.myappointments.R
 import mx.com.kevinlunaweb.myappointments.model.Appointment
 import java.util.ArrayList
 
@@ -25,7 +26,11 @@ class AppointmentAdapter(val appointments: ArrayList<Appointment>): RecyclerView
     // Inflar los items XML
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.item_appointment, parent, false)
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.item_appointment,
+                parent,
+                false
+            )
         )
     }
     // Devolver la cantidad de elementos

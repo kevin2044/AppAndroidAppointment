@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvStepThree"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="8dp">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorPrimaryLight"
+            android:paddingHorizontal="5dp"
+            android:paddingVertical="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirmar datos de la cita"
+                android:layout_marginBottom="15dp"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Descripción"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/type_appointment"
+                    android:layout_weight="0.5"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tvConfirmDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Dolor de cabeza"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_weight="0.5"
+                    android:textSize="@dimen/type_appointment"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="10dp"
+                android:background="@color/colorAccent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Especialidad"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/type_appointment"
+                    android:layout_weight="0.5"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tvConfirmSpecialty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Neurología"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_weight="0.5"
+                    android:textSize="@dimen/type_appointment"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="10dp"
+                android:background="@color/colorAccent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tipo de cita"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/type_appointment"
+                    android:layout_weight="0.5"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tvConfirmType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Consulta"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_weight="0.5"
+                    android:textSize="@dimen/type_appointment"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="10dp"
+                android:background="@color/colorAccent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Médico"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/type_appointment"
+                    android:layout_weight="0.5"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tvConfirmDoctorName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="Médico Test"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_weight="0.5"
+                    android:textSize="@dimen/type_appointment"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="10dp"
+                android:background="@color/colorAccent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha para la cita"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/type_appointment"
+                    android:layout_weight="0.5"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tvConfirmDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="12/12/2020"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_weight="0.5"
+                    android:textSize="@dimen/type_appointment"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="10dp"
+                android:background="@color/colorAccent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hora de la cita"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/type_appointment"
+                    android:layout_weight="0.5"
+                    />
+
+                <TextView
+                    android:id="@+id/tvConfirmTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="4:30 PM"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_weight="0.5"
+                    android:textSize="@dimen/type_appointment"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnConfirmAppointment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:drawableStart="@drawable/ic_check_black_24dp"
+                android:textColorHighlight="@color/colorPrimaryText"
+                android:paddingVertical="15dp"
+                android:paddingLeft="110dp"
+                android:paddingRight="130dp"
+                android:text="Confirmar" />
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.cardview.widget.CardView>
