@@ -3,6 +3,8 @@ package mx.com.kevinlunaweb.myappointments.ui
 import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -17,6 +19,7 @@ import kotlinx.android.synthetic.main.card_view_step_two.*
 import mx.com.kevinlunaweb.myappointments.R
 import mx.com.kevinlunaweb.myappointments.io.ApiService
 import mx.com.kevinlunaweb.myappointments.model.Doctor
+import mx.com.kevinlunaweb.myappointments.model.Schedule
 import mx.com.kevinlunaweb.myappointments.model.Specialty
 import retrofit2.Call
 import retrofit2.Callback
@@ -68,10 +71,51 @@ class CreateAppointmentActivity : AppCompatActivity() {
 
         loadSpecialties()
         listenSpecialtyChanges()
+        listenDoctorAndDateChanges()
+    }
 
-        val optionsDoctors = arrayOf("Doctor A", "Doctor B", "Doctor C")
+    private fun listenDoctorAndDateChanges() {
+        //doctors
+        spinnerDoctors.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
 
-        spinnerDoctors.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, optionsDoctors)
+            }
+            override fun onItemSelected(adapter: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                val doctor = adapter?.getItemAtPosition(position) as Doctor
+                loadHours(doctor.id, etScheduledDate.text.toString())
+                //Toast.makeText(this@CreateAppointmentActivity, "id: ${specialty.id}", Toast.LENGTH_SHORT).show()
+            }
+        }
+        //scheduled date
+        etScheduledDate.addTextChangedListener(object: TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                val doctor = spinnerDoctors.selectedItem as Doctor
+                loadHours(doctor.id, etScheduledDate.text.toString())
+            }
+
+        })
+    }
+
+    private fun loadHours(doctorId: Int, date: String) {
+        val call = apiService.getHours(doctorId, date)
+        call.enqueue(object: Callback<Schedule> {
+            override fun onFailure(call: Call<Schedule>, t: Throwable) {
+                Toast.makeText(this@CreateAppointmentActivity, "No se han podido cargar las horas", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onResponse(call: Call<Schedule>, response: Response<Schedule>) {
+                if(response.isSuccessful){ // 200...300
+                    val schedule = response.body()
+                    Toast.makeText(this@CreateAppointmentActivity, "morning: ${schedule?.morning?.size} , afternoon: ${schedule?.afternoon?.size}", Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
     }
 
     private fun listenSpecialtyChanges() {
@@ -79,13 +123,11 @@ class CreateAppointmentActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
             }
-
             override fun onItemSelected(adapter: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val specialty = adapter?.getItemAtPosition(position) as Specialty
                 loadDoctors(specialty.id)
-                Toast.makeText(this@CreateAppointmentActivity, "id: ${specialty.id}", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this@CreateAppointmentActivity, "id: ${specialty.id}", Toast.LENGTH_SHORT).show()
             }
-
         }
     }
 
@@ -94,7 +136,6 @@ class CreateAppointmentActivity : AppCompatActivity() {
         call.enqueue(object: retrofit2.Callback<ArrayList<Specialty>>{
             override fun onFailure(call: Call<ArrayList<Specialty>>, t: Throwable) {
                 Toast.makeText(this@CreateAppointmentActivity, "Ocurrió un problema al cargar las especialidades",Toast.LENGTH_SHORT).show()
-                finish()
             }
 
             override fun onResponse(call: Call<ArrayList<Specialty>>, response: Response<ArrayList<Specialty>>) {
@@ -154,7 +195,7 @@ class CreateAppointmentActivity : AppCompatActivity() {
             etScheduledDate.setText(resources.getString(
                 R.string.date_format,
                     y,
-                    m.twoDigits(),
+                    (m+1).twoDigits(),
                     d.twoDigits()
                 )
             )
